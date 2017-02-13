@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="arm64-v8a,armeabi-v7a,armeabi"
+    api-level="23"
+    density="xxhdpi"
+    format="8"
+    plugin-version="2.2.3"
+    timestamp="236886435085400"
+    token="7782741158849941968"
+    verifier="INITIAL_BUILD" >
+
+    <task
+        name="javac"
+        duration="1250" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="1172" />
+    <task
+        name="verifier"
+        duration="766" />
+
+    <artifact
+        location="W:\AAA_Demo\BBBBBB\HotFixAAA\hotfix_demo\hotfix_demo\build\outputs\apk\hotfix_demo-debug.apk"
+        type="MAIN" />
+
+    <build
+        timestamp="236886435085400"
+        verifier="INITIAL_BUILD" >
+        <artifact
+            location="W:\AAA_Demo\BBBBBB\HotFixAAA\hotfix_demo\hotfix_demo\build\outputs\apk\hotfix_demo-debug.apk"
+            type="MAIN" />
+    </build>
+
+</instant-run>

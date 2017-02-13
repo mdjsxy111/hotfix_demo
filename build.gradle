@@ -1,0 +1,76 @@
+apply plugin: 'com.android.application'
+
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.3'
+    }
+}
+
+repositories {
+    mavenLocal()
+    maven {
+        //百川仓库, ut/utdid
+        url "http://repo.baichuan-android.taobao.com/content/groups/BaichuanRepositories"
+    }
+
+    mavenCentral()
+    jcenter()
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion '23.0.3'
+
+
+    defaultConfig {
+        applicationId "com.taobao.hotfix.demo"
+        minSdkVersion 14
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0.0"
+    }
+    signingConfigs {
+        release {
+            storeFile file("demo.jks")
+            storePassword "test123"
+            keyAlias "test123"
+            keyPassword "test123"
+        }
+        debug {
+            storeFile file("demo.jks")
+            storePassword "test123"
+            keyAlias "test123"
+            keyPassword "test123"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            signingConfig signingConfigs.debug
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:design:24.2.1'
+    //compile project(':hotfix_core')
+    compile 'com.taobao.android:alisdk-hotfix:1.4.0'
+}
